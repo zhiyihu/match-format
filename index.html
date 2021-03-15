@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>MatchFormat</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		
+		<script src="js/gb2312.js"></script>
+		<script src="js/Setting.js"></script>
+		<script src="js/FormatUtil.js"></script>
+		<script src="js/MainUI.js"></script>
+		<style>
+	
+		</style>
+	</head>
+
+	<body>
+		<div class="zmain">
+			<div class="ztitle">格式处理V11.3</div>
+			<div class="edit-div">
+				<div class="add-div">
+					<div class="textarea-div">
+						<textarea id="match-content" onchange="countWordNum();" onkeyup="countWordNum();" onmousemove="countWordNum()"></textarea>
+					</div>
+					<div class="show-div">
+						<div class="match-attr-div">
+							<div>
+								<span>总字数：</span>
+								<span id="match-word-num">0</span>
+								<span>英文字符：</span>
+								<span id="en-char-num">0</span>
+								<span>符号配对：</span>
+								<span id="status-text">Normal</span>
+							</div>
+							<div>
+								<span>OUT-3500：</span>
+								<span id="gbk-num">0</span>
+							</div>
+						</div>
+						<div class="opt-div">
+							<input type="button" value="整理格式" class="layui-btn zbtn1" id="format-btn">
+							<input type="button" value="重置" class="layui-btn zbtn2" style="margin-right: 38px;" id="reset-btn">
+							<select style="height: 38px;width: 70px;vertical-align:top;margin-right: 4px;" id="cut-select">
+								<option value="600">600</option>
+								<option value="550">550</option>
+								<option value="500" selected>500</option>
+								<option value="450">450</option>
+								<option value="400">400</option>
+								<option value="350">350</option>
+								<option value="300">300</option>
+								<option value="250">250</option>
+							</select>
+							
+							<input type="button" value="切段" class="layui-btn zbtn2" id="cut-btn">
+						</div>
+					</div>
+					<div class="ops-div">
+						<input class="opt-ipt" type="text" placeholder="查找目标" id="original-ipt"/>
+						<input class="opt-ipt" type="text" placeholder="替换为" id="rep-ipt"/>
+						<input type="button" value="替换" class="layui-btn zbtn2" style="margin-left: 3px;margin-right: 3px;" id="replace-btn">
+						<input type="button" value="替换数字" class="layui-btn zbtn2" style="margin-left: 3px;" id="replace-num-btn">
+						<div class="auto-rep-div" id="auto-rep-div">
+							<a hef="javascript:;" data-rep="[“”]">双引号</a>
+							<a hef="javascript:;" data-rep="（[^（）]+）">括号内容</a>
+							<a hef="javascript:;" data-rep="">Clear</a>
+						</div>
+					</div>
+					<div class="rep-div" id="rep-div">
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</body>
+</html>
